@@ -1,16 +1,3 @@
-# clean_mngr
+<h1 align="center" id="title">CleanMngr</h1>
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p align="center"><img src="https://socialify.git.ci/xkarox/clean_mngr/image?description=1&amp;descriptionEditable=A%20simple%20app%20to%20manage%20employees%20and%20costumers%20for%20small%20businesses&amp;font=Source%20Code%20Pro&amp;forks=1&amp;issues=1&amp;name=1&amp;owner=1&amp;pattern=Solid&amp;pulls=1&amp;stargazers=1&amp;theme=Dark" alt="project-image"></p>
