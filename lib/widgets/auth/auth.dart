@@ -96,16 +96,16 @@ class _AuthWidgetState extends State<AuthWidget> {
         return;
       }
     }
-    final _firebaseAuth = FirebaseAuth.instance;
+    final firebaseAuth = FirebaseAuth.instance;
     setState(() {
       _isSubmitting = true;
     });
     try {
       if (_isLogin) {
-        await _firebaseAuth.signInWithEmailAndPassword(
+        await firebaseAuth.signInWithEmailAndPassword(
             email: _emailController.text, password: _passwordController.text);
       } else {
-        await _firebaseAuth.createUserWithEmailAndPassword(
+        await firebaseAuth.createUserWithEmailAndPassword(
             email: _emailController.text, password: _passwordController.text);
       }
     } on FirebaseAuthException catch (e) {
