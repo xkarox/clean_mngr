@@ -1,3 +1,4 @@
+import 'package:clean_mngr/screens/profile.dart';
 import 'package:clean_mngr/widgets/home/quick_menu/infinite_scroll_list.dart';
 import 'package:clean_mngr/widgets/home/quick_menu/quick_menu_item.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class QuickMenu extends StatelessWidget {
             icon: Icons.person_outline,
             label: 'Profile',
             onTap: () {
-              print('Profile');
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ProfileScreen()));
             },
           ),
           QuickMenuItem(
