@@ -2,6 +2,7 @@ import 'package:clean_mngr/widgets/auth/auth_field_column.dart';
 import 'package:clean_mngr/widgets/auth/validators.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class AuthWidget extends StatefulWidget {
   const AuthWidget({super.key});
@@ -105,8 +106,15 @@ class _AuthWidgetState extends State<AuthWidget> {
         await firebaseAuth.signInWithEmailAndPassword(
             email: _emailController.text, password: _passwordController.text);
       } else {
-        await firebaseAuth.createUserWithEmailAndPassword(
+        var userCreateResponse = await firebaseAuth.createUserWithEmailAndPassword(
             email: _emailController.text, password: _passwordController.text);
+        if (userCreateResponse.user != null) {
+          DatabaseReference dbRef = FirebaseDatabase.instance.ref("users/${userCreateResponse.user!.uid}");
+          await dbRef.set({
+            "email": _emailController.text,
+            "username": _usernameController.text,
+          });
+        }
       }
     } on FirebaseAuthException catch (e) {
       setState(() {
