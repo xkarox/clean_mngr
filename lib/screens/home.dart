@@ -1,3 +1,4 @@
+import 'package:clean_mngr/widgets/calender/calender.dart';
 import 'package:clean_mngr/widgets/home/quick_menu/quick_menu.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -32,11 +33,13 @@ class HomeScreen extends StatelessWidget {
             Colors.white,
           ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
         ),
-        child: const SafeArea(
-          child: Column(
+        child: SafeArea(
+          child: ListView(
             children: [
-              SizedBox(height: 0),
-              QuickMenu(),
+              const SizedBox(height: 0),
+              const QuickMenu(),
+              const SizedBox(height: 5),
+              Container(padding: const EdgeInsets.all(12), child: const CalenderWidget()),
             ],
           ),
         ),
@@ -44,3 +47,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+

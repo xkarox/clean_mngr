@@ -5,8 +5,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flex_seed_scheme/flex_seed_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:calendar_view/calendar_view.dart';
 
-const Color primarySeedColor = Color.fromARGB(255, 62, 0, 107);
+const Color primarySeedColor = Color.fromARGB(255, 31, 0, 171);
 // const Color primarySeedColor = Color.fromARGB(255, 97, 68, 0);
 
 // Make a light ColorScheme from the seeds.
@@ -63,12 +64,15 @@ class _AppState extends State<App> {
       }
     });
 
-    return MaterialApp(
-      title: 'FlutterChat',
-      themeMode: ThemeMode.system,
-      theme: ThemeData(colorScheme: schemeLight),
-      darkTheme: ThemeData(colorScheme: schemeDark),
-      home: _isLoggedIn ? const HomeScreen() : const AuthScreen(),
+    return CalendarControllerProvider(
+      controller: EventController(),
+      child: MaterialApp(
+        title: 'FlutterChat',
+        themeMode: ThemeMode.system,
+        theme: ThemeData(colorScheme: schemeLight),
+        darkTheme: ThemeData(colorScheme: schemeDark),
+        home: _isLoggedIn ? const HomeScreen() : const AuthScreen(),
+      ),
     );
   }
 }
